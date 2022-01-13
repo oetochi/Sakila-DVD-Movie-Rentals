@@ -79,3 +79,28 @@ GROUP BY
   st.store_id
 ORDER BY
   rental_month;
+
+/* QUESTION SET 2 QUESTION 2
+Can you write a query to capture the customer name, month and year of payment, 
+and total payment amount for each month by these top 10 paying customers?*/
+
+SELECT 
+  DATE_TRUNC('month', payment_date) month_paid,
+  customer_name,
+  SUM(amount) sum_amnt
+FROM
+  (
+    SELECT
+      customer_id,
+      CONCAT (first_name, ' ', last_name) customer_name
+    FROM
+      customer
+   ) sub
+   JOIN payment p ON sub.customer_id = p.customer_id
+GROUP BY 
+  DATE_TRUNC('month', payment_date),
+  customer_name
+ORDER BY
+  sum_amnt DESC
+LIMIT
+  10;
