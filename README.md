@@ -65,3 +65,14 @@ Worthy of mention is Mr Derek Steer, CEO of [Mode](www.mode.com). He taught me S
 
 [**PostgreSQL Tutorial**](https://www.postgresqltutorial.com/postgresql-sample-database/)
 
+# Sample Questions
+You can attempt answering these questions to get acquainted with the Sakila database
+
+1. Create a query that lists each movie, the film category it is classified in, and the number of times it has been rented out.
+
+1. Provide a table with the movie titles and divide them into 4 levels (first_quarter, second_quarter, third_quarter, and final_quarter) based on the quartiles (25%, 50%, 75%) of the rental duration for movies across all categories.
+
+1. Write a query that returns the store ID for the store, the year and month and the number of rental orders each store has fulfilled for that month. Your table should include a column for each of the following: year, month, store ID and count of rental orders fulfilled during that month.
+
+1. Can you write a query to capture the customer name, month and year of payment, 
+and total payment amount for each month by these top 10 paying customers?
