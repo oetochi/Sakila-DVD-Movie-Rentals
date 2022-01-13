@@ -59,3 +59,23 @@ GROUP BY
   t1.standard_quartile
 ORDER BY 
   t2.name;
+
+/*QUESTION SET 2 QUESTION 1.
+Write a query that returns the store ID for the store, the year and month and the number of rental orders each store
+has fulfilled for that month. Your table should include a column
+for each of the following: year, month, store ID and count of
+rental orders fulfilled during that month.*/
+
+SELECT
+  DATE_TRUNC('month', rental_date) rental_month,
+  st.store_id,
+  COUNT(r.rental_id)
+FROM
+  rental r
+  JOIN staff s ON r.staff_id = s.staff_id
+  JOIN store st ON st.store_id = s.store_id
+GROUP BY 
+  DATE_TRUNC('month', rental_date),
+  st.store_id
+ORDER BY
+  rental_month;
